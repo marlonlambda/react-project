@@ -1,7 +1,10 @@
 import React from 'react'
+import Sidebar from '../ui/SideBar'
 
 export const AppRouter = () => {
   return (
-    <div>AppRouter</div>
+    <div>
+      <Sidebar />
+    </div>
   )
 }
