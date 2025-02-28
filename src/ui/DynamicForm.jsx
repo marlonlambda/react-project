@@ -11,6 +11,9 @@ export const DynamicForm = ({ fields, onSubmit }) => {
                     isRequired: field.required,
                     onChange: field.onChange,
                     className: field.className || "",
+                    size: 'sm',
+                    classNames:  {input: "text-xs" }
+
                 };
 
                 switch (field.type) {
@@ -19,13 +22,14 @@ export const DynamicForm = ({ fields, onSubmit }) => {
                     case 'password':
                         return (
                             <Input
-                                key={field.name}                                
+                                {...commonProps}
+                                key={field.name}
                                 label={field.label}
                                 type={field.type}
                                 placeholder={field.placeholder}
                                 variant="faded"
                                 value={field.value}
-
+                                startContent={field.startContent}
                             />
                         );
                     case 'select':

@@ -5,7 +5,7 @@ export const Sidebar = ({ open, setOpen }) => {
     const Menus = [
         { title: "Productos", icon: <HiShoppingCart className="text-xl" />, path: "/productos" },
         { title: "Usuarios", icon: <HiUsers className="text-xl" />, path: "/usuarios" },
-        { title: "Clientes", icon: <HiUserGroup className="text-xl" />, gap: true, path: "/clientes" },
+        { title: "Clientes", icon: <HiUserGroup className="text-xl" />, path: "/clientes" },
         { title: "Pedidos", icon: <HiClipboardList className="text-xl" />, path: "/pedidos" }
     ];
 

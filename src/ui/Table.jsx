@@ -10,6 +10,7 @@ import {
     Pagination,
     Chip,
     Tooltip,
+    Spacer,
 } from "@heroui/react";
 
 export const CustomTable = ({ headers, data, onEdit, onDelete }) => {
@@ -34,7 +35,7 @@ export const CustomTable = ({ headers, data, onEdit, onDelete }) => {
                 <TableHeader columns={headers}>
                     {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
                 </TableHeader>
-                <TableBody className="p-2" emptyContent={"No hay información para mostrar"} items={paginatedData}>
+                <TableBody className="p-4" emptyContent={"No hay información para mostrar"} items={paginatedData}>
                     {(item) => (
                         <TableRow key={item.id}>
                             {headers.map((column) => (
@@ -50,7 +51,7 @@ export const CustomTable = ({ headers, data, onEdit, onDelete }) => {
                                         </Chip>
                                     ) : column.key === "actions" ? (
                                         <div className="flex gap-2">
-                                            <Tooltip content="Editar">
+                                            <Tooltip content="Editar">  
                                                 <span
                                                     className="text-lg text-default-400 cursor-pointer active:opacity-50"
                                                     onClick={() => onEdit(item)}

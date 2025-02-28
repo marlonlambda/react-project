@@ -4,7 +4,6 @@ import { DynamicFormModal } from "../../../ui/DynamicFormModal";
 import { useForm } from "../../../hooks/useForm";
 import { createCustomer, updateCustomer } from "../services/customers.service";
 import { IoIosAdd } from "react-icons/io";
-import { HiMail, HiUser, HiPhone, HiHashtag    } from "react-icons/hi";
 
 
 const initialFormData = {
@@ -41,15 +40,15 @@ export const CustomersForm = ({ selectedCustomer }) => {
     };
 
     const fields = [
-        { type: "text", name: "name", label: "Nombre", required: true, value: formState.name, onChange: onInputChange },
-        { type: "text", name: "phone", label: "Teléfono", required: true, value: formState.phone, onChange: onInputChange },
-        { type: "email", name: "email", label: "Email", required: true, value: formState.email, onChange: onInputChange },
-        { type: "text", name: "address", label: "Dirección", required: true, value: formState.address, onChange: onInputChange },
+        { type: "text", name: "name", label: "Nombre", required: true, value: formState.name, onChange: onInputChange, className: 'col-span-1' },
+        { type: "text", name: "phone", label: "Teléfono", required: true, value: formState.phone, onChange: onInputChange, className: 'col-span2-1'  },
+        { type: "email", name: "email", label: "Email", required: true, value: formState.email, onChange: onInputChange, className:  'col-span-2'},
+        { type: "text", name: "address", label: "Dirección", required: true, value: formState.address, onChange: onInputChange, className: 'col-span-2' },
     ];
 
     return (
         <>
-            <Button color="primary" endContent={<IoIosAdd className="text-4xl" />} onPress={onOpen}>
+            <Button color="primary" size="sm" endContent={<IoIosAdd className="text-4xl" />} onPress={onOpen}>
                 Agregar
             </Button>
             <DynamicFormModal

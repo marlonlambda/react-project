@@ -13,10 +13,12 @@ export const HeaderList = ({ children }) => {
                         color="primary"
                         variant="bordered"
                         labelPlacement="outside"
-                        placeholder="you@example.com"
+                        placeholder="Buscar..."
                         startContent={
                             <IoSearchOutline className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
                         }
+                        size="sm"
+                        classNames={{ input: "text-xs" }}
                     />
                     { children }
 
