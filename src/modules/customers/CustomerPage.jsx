@@ -18,8 +18,10 @@ export const CustomersPage = () => {
     const [selectedCustomer, setSelectedCustomer] = useState(null);
 
     const handleEdit = (customer) => {
-        setSelectedCustomer(null); // Forzar actualización
-        setTimeout(() => setSelectedCustomer(customer), 0); // React detectará el cambio
+        setSelectedCustomer(null); 
+        setTimeout(() => setSelectedCustomer(customer), 0); 
+        refresh()
+
     };
 
     const handleDelete = async (id) => {
@@ -32,7 +34,7 @@ export const CustomersPage = () => {
     return (
         <div className="h-screen">
             <HeaderList>
-                <CustomersForm selectedCustomer={selectedCustomer} />
+                <CustomersForm selectedCustomer={selectedCustomer} refresh={refresh}/>
             </HeaderList>
             <CustomTable headers={headers} data={data || []} onEdit={handleEdit} onDelete={handleDelete} />
         </div>

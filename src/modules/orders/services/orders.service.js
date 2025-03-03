@@ -5,6 +5,9 @@ export const createOrder = async (ordersData) => {
 };
 
 export const updateOrder = async (id, ordersData) => {
+    console.log("Actualizando pedido con ID:", id);
+    console.log("Datos enviados:", JSON.stringify(ordersData, null, 2)); // 🛠 Para depuración
+
     return api.put(`orders/${id}/`, ordersData);
 };
 

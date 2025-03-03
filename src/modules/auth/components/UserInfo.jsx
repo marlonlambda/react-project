@@ -1,18 +1,28 @@
 import { User, Link } from "@heroui/react";
+import { useSelector } from "react-redux";
 
-export const UserInfo = () => {
+export const UserInfo = ({ isOpen }) => {
+    const { user } = useSelector(state => state.auth);
+    const { first_name, last_name, email } = user   
+
     return (
-        <User
-            className="text-white rounded-full bg-gray-700 pl-2 pr-4 border border-gray-900 shadow-xl"
-            avatarProps={{
-                src: "https://avatars.githubusercontent.com/u/30373425?v=4",
-            }}
-            description={
-                <Link className="text-gray-80 text-xs" isExternal href="https://x.com/jrgarciadev" size="sm">
-                    @jrgarciadev
-                </Link>
-            }
-            name="Junior Garcia"
-        />
+        <div className="flex items-center transition duration-700">
+            <User
+                className={`text-black w-full flex justify-start items-center bg-blue-700/15  p-2 border border-black/5 shadow-sm ${
+                    !isOpen ? "justify-center p-0 w-10 h-10 rounded-full border-none bg-transparent shadow-none" : ""
+                }`}
+                avatarProps={{
+                    src: "https://avatars.githubusercontent.com/u/30373425?v=4",
+                }}
+                name={isOpen ? `${first_name} ${last_name}` : ""}
+                description={
+                    isOpen ? (
+                        <Link className="text-blue-500 text-xs" isExternal href="https://x.com/jrgarciadev" size="sm">
+                            { email }
+                        </Link>
+                    ) : null
+                }
+            />
+        </div>
     );
-}
+};

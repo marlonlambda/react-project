@@ -11,7 +11,7 @@ export const Layout = () => {
             <Sidebar open={sidebarOpen} setOpen={setSidebarOpen} />
             <div className={`flex bg flex-col transition-all duration-300 ${sidebarOpen ? "w-[calc(100%-18rem)]" : "w-[calc(100%-5rem)]"}`}>
                 <Navbar />
-                <main className="p-5  h-full overflow-auto">
+                <main className="p-5  h-full overflow-hidden">
                     <Outlet />
                 </main>
             </div>
